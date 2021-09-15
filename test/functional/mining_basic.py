@@ -9,28 +9,17 @@
 - submitblock"""
 
 import copy
-from decimal import Decimal
 
+from decimal import Decimal
 from test_framework.blocktools import (
     create_coinbase,
-    TIME_GENESIS_BLOCK,
+    TIME_GENESIS_BLOCK
 )
-from test_framework.messages import (
-    CBlock,
-    CBlockHeader,
-    BLOCK_HEADER_SIZE
-)
-from test_framework.mininode import (
-    P2PDataStore,
-)
+from test_framework.messages import (CBlock, CBlockHeader, BLOCK_HEADER_SIZE)
+from test_framework.mininode import P2PDataStore
 from test_framework.test_framework import BitcoinTestFramework
-from test_framework.util import (
-    assert_equal,
-    assert_raises_rpc_error,
-    connect_nodes,
-)
+from test_framework.util import (assert_equal, assert_raises_rpc_error, connect_nodes)
 from test_framework.script import CScriptNum
-
 
 def assert_template(node, block, expect, rehash=True):
     if rehash:
